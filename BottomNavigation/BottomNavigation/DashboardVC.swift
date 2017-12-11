@@ -14,6 +14,19 @@ class DashboardVC: UIViewController {
     super.viewDidLoad()
 
     // Do any additional setup after loading the view.
+    
+    let fullScreenSize = UIScreen.main.bounds.size
+    
+    let dashLabel = UILabel(frame: CGRect(x: 0,
+                                          y: fullScreenSize.height / 4,
+                                          width: fullScreenSize.width,
+                                          height: 80))
+    dashLabel.text = "DashBoard"
+    dashLabel.textColor = UIColor.yellow
+    dashLabel.font = UIFont.systemFont(ofSize: 30)
+    dashLabel.textAlignment = .center
+    dashLabel.numberOfLines = 1
+    self.view.addSubview(dashLabel)
   }
 
   override func didReceiveMemoryWarning() {

@@ -14,6 +14,19 @@ class NotifyVC: UIViewController {
     super.viewDidLoad()
 
     // Do any additional setup after loading the view.
+    let fullScreenSize = UIScreen.main.bounds.size
+    
+    let notifyLabel = UILabel(frame: CGRect(x: 0,
+                                            y: fullScreenSize.height / 4,
+                                            width: fullScreenSize.width,
+                                            height: 80))
+    notifyLabel.text = "Notify"
+    notifyLabel.textColor = UIColor.green
+    notifyLabel.font = UIFont.systemFont(ofSize: 30)
+    notifyLabel.textAlignment = .center
+    notifyLabel.numberOfLines = 1
+    
+    self.view.addSubview(notifyLabel)
   }
 
   override func didReceiveMemoryWarning() {
