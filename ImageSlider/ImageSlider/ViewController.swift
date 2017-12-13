@@ -57,7 +57,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     pageControl.center = CGPoint(x: fullSize.width * 0.5, y: fullSize.height * 0.9)
     pageControl.numberOfPages = imgList.count
     pageControl.currentPage = 0 // starting page
-    
     pageControl.currentPageIndicatorTintColor = UIColor.black // 目前所在頁數的點點顏色
     pageControl.pageIndicatorTintColor = UIColor.lightGray // 其餘頁數的點點顏色
     
