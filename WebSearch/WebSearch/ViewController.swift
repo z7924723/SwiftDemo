@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController, UIWebViewDelegate, UISearchBarDelegate {
+class ViewController: UIViewController, UISearchBarDelegate {
 
   @IBOutlet weak var webView: WKWebView!
   @IBOutlet weak var searchBar: UISearchBar!
