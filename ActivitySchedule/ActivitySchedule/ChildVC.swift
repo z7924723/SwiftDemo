@@ -101,7 +101,7 @@ class ChildVC: UIViewController {
     timePicker.date = Date() // set default time is now
     
     let timeFormat = DateFormatter()
-    timeFormat.dateFormat = "HH:mm"
+    timeFormat.dateFormat = "a HH:mm"
 
     let fromTime = timeFormat.date(from: "00:00")
     timePicker.minimumDate = fromTime
@@ -124,7 +124,7 @@ class ChildVC: UIViewController {
     confirmBtn.setTitle("Confirm", for: .normal)
     confirmBtn.backgroundColor = UIColor.gray
     confirmBtn.addTarget(self,
-                         action: #selector(ChildVC.confirmBtnAction),
+                         action: #selector(ChildVC.confirmBtnAction(_:)),
                          for: .touchDown)
     self.view.addSubview(confirmBtn)
   }
@@ -146,14 +146,32 @@ class ChildVC: UIViewController {
     showTime.text = timeFormat.string(from: datePicker.date)
   }
   
-  @IBAction func confirmBtnAction() {
+  @IBAction func confirmBtnAction(_ sender: UIButton) {
     let dateFormat = DateFormatter()
     dateFormat.dateFormat = "yyyy-MM-dd"
     
     let timeFormat = DateFormatter()
     timeFormat.dateFormat = "HH:mm"
     
-    showDate.text = dateFormat.string(from: datePicker.date)
-    showTime.text = timeFormat.string(from: timePicker.date)
+    let dateStr: String = dateFormat.string(from: datePicker.date)
+    let timeStr: String = timeFormat.string(from: timePicker.date)
+    
+    let alertCtrl = UIAlertController(title: "Time Confirm",
+                                      message: "\(dateStr) \(timeStr)",
+                                      preferredStyle: .alert)
+    
+    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+    alertCtrl.addAction(cancelAction)
+    
+    let okAction = UIAlertAction(title: "Confirm",
+                                 style: .default,
+                                 handler: {
+                                  (action: UIAlertAction!) -> Void in
+                                  self.showDate.text = dateStr
+                                  self.showTime.text = timeStr
+                                 })
+    alertCtrl.addAction(okAction)
+    
+    self.present(alertCtrl, animated: true, completion: nil)
   }
 }
