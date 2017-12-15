@@ -20,12 +20,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     // Collection layout
     let layout = UICollectionViewFlowLayout()
-    layout.sectionInset = UIEdgeInsetsMake(5, 35, 5, 50);
+    layout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
     layout.minimumLineSpacing = 10 // space between each line
-    layout.minimumInteritemSpacing = 10 // space between each item
+//    layout.minimumInteritemSpacing = 10 // space between each item
 //    layout.scrollDirection = .horizontal
-    layout.itemSize = CGSize(width: CGFloat(fullSize.width) / 3,
-                             height: CGFloat(fullSize.height) / 3)
+    layout.itemSize = CGSize(width: CGFloat(fullSize.width) / 3 - 10,
+                             height: CGFloat(fullSize.height) / 3 - 10)
     
     layout.headerReferenceSize = CGSize(width: fullSize.width, height: 40)
     layout.footerReferenceSize = CGSize(width: fullSize.width, height: 40)
@@ -62,7 +62,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
   // number of cell in a section
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 7
+    return 4
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -102,7 +102,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
       
       //header content
       reusableView.backgroundColor = UIColor.darkGray
-      label.text = "Header";
+      label.text = "Header"
       label.textColor = UIColor.white
       
     } else if kind == UICollectionElementKindSectionFooter {
@@ -114,7 +114,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
       
       //footer content
       reusableView.backgroundColor = UIColor.cyan
-      label.text = "Footer";
+      label.text = "Footer"
       label.textColor = UIColor.black
     }
     

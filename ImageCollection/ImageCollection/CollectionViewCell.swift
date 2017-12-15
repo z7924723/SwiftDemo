@@ -18,16 +18,16 @@ class CollectionViewCell: UICollectionViewCell {
     
     let width = Double(UIScreen.main.bounds.size.width)
     
-    // 建立一個 UIImageView
+    // UIImageView
     imgView = UIImageView(frame: CGRect(x: 0,
                                         y: 0,
                                         width: width/3 - 10.0,
                                         height: width/3 - 10.0))
     self.addSubview(imgView)
     
-    // 建立一個 UILabel
+    // UILabel
     titleLabel = UILabel(frame: CGRect(x: 0,
-                                       y: Int(imgView.frame.maxY),
+                                       y: 0,
                                        width: Int(width / 3 - 10),
                                        height: 40))
     titleLabel.textAlignment = .center
