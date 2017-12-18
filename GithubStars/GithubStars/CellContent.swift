@@ -10,11 +10,11 @@ import UIKit
 
 class CellContent: UITableViewCell {
   
-  var nameLabel: UILabel = UILabel()
-  var descLabel: UILabel = UILabel()
-  var forksCount: UILabel = UILabel()
-  var login: UILabel = UILabel()
-  var stargazers: UILabel = UILabel()
+  var nameLabel: UILabel!
+  var descLabel: UILabel!
+  var forksCount: UILabel!
+  var login: UILabel!
+  var stargazers: UILabel!
   
   override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
