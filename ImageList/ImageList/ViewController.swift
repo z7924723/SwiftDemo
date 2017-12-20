@@ -8,9 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource {
   
-  var tableView: UITableView!
   var imgList: [UIImage] = [
     UIImage(named: "01.jpg")!,
     UIImage(named: "02.jpg")!,
@@ -42,7 +41,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     tableView.allowsSelection = true
     tableView.allowsMultipleSelection = false
     
-    tableView.delegate = self
     tableView.dataSource = self
     
     self.view.addSubview(tableView)
@@ -67,6 +65,5 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     cell.strLabel.text = "aaa"
     return cell
   }
-
 }
 
