@@ -21,8 +21,7 @@ class PlayerVC: UIViewController {
   var volLabel: UILabel!
   var progressTimer: Timer?
   var defaultVol: Float = 0.5
-  var count: Double = 0
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
@@ -126,9 +125,7 @@ class PlayerVC: UIViewController {
   }
   
   @IBAction func progressChangeAct(_ sender: UISlider) {
-//    audioPlayer.stop()
     audioPlayer.currentTime = TimeInterval(sender.value)
-//    audioPlayer.play()
   }
   
   @IBAction func palyBtnAction(sender: AnyObject) {
@@ -154,7 +151,6 @@ class PlayerVC: UIViewController {
   
   @IBAction func stopBtnAction() {
     stopTimeInterval()
-    count = 0
     audioPlayer.stop()
     audioPlayer.currentTime = 0
     musicProgress.value = 0
