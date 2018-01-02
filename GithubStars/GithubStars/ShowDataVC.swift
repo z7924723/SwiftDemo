@@ -31,7 +31,6 @@ class ShowDataVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   var dataCount: Int = 0
   var cellData: [starInfo] = [starInfo]()
   var myTableView: UITableView = UITableView()
-  var GitDataMainVCInstance: GitDataMainVC?
   var gitHubID: String = ""
   var getError: Bool = false
   
@@ -96,7 +95,7 @@ class ShowDataVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   }
   
   func getData(_ link: String) {
-    let url:URL = URL(string: link)!
+    let url: URL = URL(string: link)!
     let session = URLSession.shared
     let request = URLRequest(url: url)
     
