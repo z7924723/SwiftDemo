@@ -136,6 +136,7 @@ class RecorderVC: UIViewController, UITableViewDelegate, UITableViewDataSource{
     let recordFilePath = getDirectoryPath().appendingPathComponent("\(indexPath.row + 1).m4a")
     do {
       audioPlayer = try AVAudioPlayer(contentsOf: recordFilePath)
+      audioPlayer.volume = 1.0
       audioPlayer.play()
     } catch {
       print("Play error:", error.localizedDescription)
