@@ -11,7 +11,8 @@ import UserNotifications
 
 class ViewController: UIViewController {
   
-  var notifyInSecond = 60
+  let notifyInSecond = 10
+  let repeatNotify: Bool = false
   let notificationId = "constomNotification"
   
   let notifyBtn: UIButton = {
@@ -56,20 +57,21 @@ class ViewController: UIViewController {
   }
   
   func timeNotification(inSeconds: TimeInterval, completion: @escaping (_ success: Bool) -> ()) {
+    let content = UNMutableNotificationContent()
     guard let imgURL = Bundle.main.url(forResource: "NickYoung", withExtension: "gif") else {
       completion(false)
       return
     }
-    
+  
     let attachment = try! UNNotificationAttachment(identifier: "NickYoung", url: imgURL, options: .none)
-    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: inSeconds, repeats: true)
-    let content = UNMutableNotificationContent()
     content.title = "New notification"
     content.subtitle = "Hello!"
     content.body = "Content body."
     content.attachments = [attachment]
     content.sound = UNNotificationSound.default()
     content.badge = (UIApplication.shared.applicationIconBadgeNumber + 1) as NSNumber
+    
+    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: inSeconds, repeats: repeatNotify)
     
     let request = UNNotificationRequest(identifier: notificationId,
                                         content: content,
