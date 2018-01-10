@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class ViewController: UIViewController {
 
@@ -40,6 +41,7 @@ class ViewController: UIViewController {
 
   override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
     updateImage()
+    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))    
   }
   
   func updateImage() {
