@@ -30,7 +30,7 @@ class DisplayVC: UIViewController {
     infoLabel.textAlignment = .center
     infoLabel.center = CGPoint(x: fullSize.width * 0.5, y: fullSize.height * 0.25)
     
-    if let nameInfo = getUserDefaults.object(forKey: "name") as? String {
+    if let nameInfo = getUserDefaults.string(forKey: "name") {
       infoLabel.text = nameInfo
     } else {
       infoLabel.text = "Please input name"
