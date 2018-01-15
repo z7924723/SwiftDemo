@@ -85,6 +85,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
   @IBAction func updateInfo() {
     self.view.endEditing(true) // Hide keyboard
     userDefaults.set(textField.text, forKey: "name")
+    textField.text = ""
   }
   
   @IBAction func removeInfo() {
