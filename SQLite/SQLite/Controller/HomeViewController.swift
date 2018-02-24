@@ -41,13 +41,13 @@ class HomeViewController: UIViewController {
                                                 y: 0,
                                                 width: ScreenSize.width,
                                                 height: ScreenSize.height),
-                                      style: .grouped)
+                                      style: .plain)
         dbTableView.register(DbTableCell.self, forCellReuseIdentifier: "Cell")
         dbTableView.delegate = self
         dbTableView.dataSource = self
         dbTableView.separatorStyle = .singleLine
 //        dbTableView.bounces = false // will not spring back
-        dbTableView.contentInset = UIEdgeInsets(top: -34, left: 0, bottom: -34, right: 0)
+//        dbTableView.contentInset = UIEdgeInsets(top: -34, left: 0, bottom: -34, right: 0)
         self.view.addSubview(dbTableView)
         
 //        dbData = fetchData(offset: 1)!
