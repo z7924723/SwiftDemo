@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nJW-kL-wWp">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--儲值-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05p-WK-mmF" userLabel="Camera Button" customClass="TestButton" customModule="QRCode" customModuleProvider="target">
+                                <rect key="frame" x="154" y="378" width="106" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <state key="normal" title="打開相機">
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonBorderColor">
+                                        <color key="value" red="0.47058823529999999" green="0.99607843139999996" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="buttonBorderWidth">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="0.12809979699999999" blue="0.13820887109999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="MzX-st-aEe" kind="show" id="Ht5-T9-5eC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="05p-WK-mmF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gVI-7d-hd8"/>
+                            <constraint firstItem="05p-WK-mmF" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="wdU-Pm-77i"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="儲值" id="qTR-vO-h1B"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--Code View Controller-->
+        <scene sceneID="RYv-wy-x8K">
+            <objects>
+                <viewController id="MzX-st-aEe" customClass="QRCodeViewController" customModule="QRCode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dow-BH-aI9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9kf-fZ-xqL" userLabel="Video Preview View">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9kf-fZ-xqL" firstAttribute="leading" secondItem="k9Y-L8-cFY" secondAttribute="leading" id="N2p-Vi-PPX"/>
+                            <constraint firstItem="9kf-fZ-xqL" firstAttribute="bottom" secondItem="k9Y-L8-cFY" secondAttribute="bottom" id="Nmd-8H-9VT"/>
+                            <constraint firstItem="9kf-fZ-xqL" firstAttribute="top" secondItem="k9Y-L8-cFY" secondAttribute="top" id="f47-re-1kZ"/>
+                            <constraint firstItem="9kf-fZ-xqL" firstAttribute="trailing" secondItem="k9Y-L8-cFY" secondAttribute="trailing" id="nFG-Jq-4Nb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="k9Y-L8-cFY"/>
+                    </view>
+                    <connections>
+                        <outlet property="videoPreview" destination="9kf-fZ-xqL" id="9kU-Vy-8aB"/>
+                        <segue destination="AJ0-6f-Cq6" kind="presentation" identifier="OpenLink" id="4Op-sS-dED"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GZo-0p-iyM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1880" y="133"/>
+        </scene>
+        <!--Present Data View Controller-->
+        <scene sceneID="VBl-v9-JKG">
+            <objects>
+                <viewController id="AJ0-6f-Cq6" customClass="PresentDataViewController" customModule="QRCode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kcd-cO-nog">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="tP9-e9-Uy4"/>
+                    </view>
+                    <connections>
+                        <segue destination="zEp-NE-Ipy" kind="unwind" identifier="unWindToMainViewController" unwindAction="unwindToMainViewController:" id="FfO-fS-HRv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OBp-JA-XSd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="zEp-NE-Ipy" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2663" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PvW-Cl-7rb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nJW-kL-wWp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r9l-Go-8oS">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cj6-UP-JvD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X9U-GF-VfC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="348" y="134"/>
+        </scene>
+    </scenes>
+</document>
